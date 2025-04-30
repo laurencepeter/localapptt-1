@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
 
   // This will hold the feedback text to show the entered username and password
-  String _feedbackText = '';
+  //String _feedbackText = '';
 
   // Function to handle login logic and show feedback
   void _onPressed() {
@@ -41,14 +41,14 @@ class _LoginScreenState extends State<LoginScreen> {
     final String password = _passwordController.text;
 
     // Update the feedback text with the entered username and password
-    setState(() {
-      _feedbackText = 'Username: $username\nPassword: $password';
-    });
+    //setState(() {
+    //  _feedbackText = 'Username: $username\nPassword: $password';
+    //});
 
     // Optionally, show a Snackbar for feedback
-    // ScaffoldMessenger.of(context).showSnackBar(
-    //   SnackBar(content: Text('Username: $username\nPassword: $password'))
-    // );
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('$username Logged In Successfully!\n Protect your password $password',textAlign: TextAlign.center,))
+    );
   }
 
   @override
@@ -56,11 +56,16 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Login'),
+        
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            Image.asset(
+              'lib/assets/images/RDLG3.png',
+              height: 150,
+            ),
             TextField(
               controller: _usernameController,
               decoration: InputDecoration(labelText: 'Username'),
@@ -77,10 +82,10 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             SizedBox(height: 20),
             // Display feedback text (entered username and password)
-            Text(
+            /*Text(
               _feedbackText,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
+            ),*/
           ],
         ),
       ),
