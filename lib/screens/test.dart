@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TestApp extends StatefulWidget {
+  const TestApp({super.key});
+
   @override
   State<TestApp> createState() => _TestAppState();
 }
@@ -34,7 +36,7 @@ class _TestAppState extends State<TestApp> {
 class HomeScreen extends StatelessWidget {
   final VoidCallback onThemeToggle;
 
-  HomeScreen({required this.onThemeToggle});
+  const HomeScreen({super.key, required this.onThemeToggle});
 
   @override
   Widget build(BuildContext context) {
