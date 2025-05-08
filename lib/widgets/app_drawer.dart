@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'light_dark.dart'; // assuming light_dark.dart is in the same widgets/ folder
+import 'light_dark.dart'; // Assuming the LightDarkToggle widget is imported here
 
 class AppDrawer extends StatelessWidget {
   final bool isDarkMode;
@@ -22,7 +22,7 @@ class AppDrawer extends StatelessWidget {
               color: Colors.blue,
             ),
             child: Text(
-              'My App Drawer',
+              'Local TT',
               style: TextStyle(color: Colors.white, fontSize: 24),
             ),
           ),
@@ -49,8 +49,8 @@ class AppDrawer extends StatelessWidget {
           ),
           const Divider(),
           LightDarkToggle(
-            isDarkMode: isDarkMode,
-            onToggle: (_) => onToggleTheme(),
+            isDarkMode: isDarkMode,  // Pass the current theme mode state
+            onToggle: (_) => onToggleTheme(),  // Call the onToggleTheme function when toggled
           ),
         ],
       ),

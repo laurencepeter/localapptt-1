@@ -12,14 +12,11 @@ class LightDarkToggle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(isDarkMode ? Icons.dark_mode : Icons.light_mode),
-      title: Text(isDarkMode ? 'Dark Mode' : 'Light Mode'),
-      trailing: Switch(
-        value: isDarkMode,
-        onChanged: onToggle,
-      ),
-      onTap: () => onToggle(!isDarkMode),
+    return SwitchListTile(
+      title: Text('Dark Mode'),
+      value: isDarkMode,
+      onChanged: onToggle,  // When toggled, the onToggle function is called
+      secondary: Icon(isDarkMode ? Icons.nightlight_round : Icons.wb_sunny),
     );
   }
 }
