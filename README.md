@@ -3,6 +3,7 @@
 **After inspecting the LocalAppTT launched in Trinidad and Tobago it was noted that why offer one feature instead of making a hub to access a variety of services.
 
 **Examples:
+
           - Internal Services such as SharePoint forms for the overall reduction of paper usage.
           - External Services such as the initial purpose of the app, to report issues in the area.
 
