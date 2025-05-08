@@ -23,7 +23,13 @@ class HomePage extends StatelessWidget {
         onToggleTheme: onToggleTheme,  // Pass the toggle function
       ),
       body: Center(
-        child: Text('Home Page Content'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Welcome to the Home Page!'),
+            Image.asset('lib/assets/images/RDLG3.png'),
+          ],
+        ),
       ),
     );
   }
