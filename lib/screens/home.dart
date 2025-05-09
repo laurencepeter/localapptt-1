@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/internalservices.dart';
 import 'package:flutter_application_1/widgets/app_drawer.dart';
 
 
@@ -26,8 +27,40 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('Welcome to the Home Page!'),
-            Image.asset('lib/assets/images/RDLG3.png'),
+            Container(
+              margin: EdgeInsets.only(bottom: 20),
+              child: Image.asset('lib/assets/images/RDLG3.png'),
+            ),
+            Text(
+              'SERVICES',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                //color: theme.textTheme.bodyLarge?.color,
+              ),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                //backgroundColor: theme.colorScheme.primary,
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => InternalServices()),
+                );
+              },
+              child: Text('INTERNAL'),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                //backgroundColor: theme.colorScheme.primary,
+              ),
+              onPressed: () {
+                // Navigate to external services screen
+              },
+              child: Text('EXTERNAL'),
+            ),
           ],
         ),
       ),
