@@ -36,11 +36,14 @@ class InternalServices extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: Colors.black,
+        selectedItemColor: Colors.blue,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.add), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.file_copy), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.close), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.file_copy), label: 'Copy'),
+          BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Add'),          
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.close), label: 'Close'),
         ],
         currentIndex: 0,
         onTap: (index) {
