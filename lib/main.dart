@@ -38,7 +38,7 @@ class MyAppState extends State<MyApp> {
 
   
 }
-
+/*
 // mobile_home.dart
 class MobileHome extends StatelessWidget {
   const MobileHome({super.key});
@@ -76,4 +76,4 @@ class DesktopHome extends StatelessWidget {
       body: Center(child: Text("This is Desktop")),
     );
   }
-}
+}*/
