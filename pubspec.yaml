@@ -61,6 +61,7 @@ flutter:
   assets:
   
     - lib/assets/images/RDLG3.png
+    - lib/assets/images/RDLG2.1.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

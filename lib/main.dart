@@ -35,4 +35,45 @@ class MyAppState extends State<MyApp> {
       ),
     );
   }
+
+  
+}
+
+// mobile_home.dart
+class MobileHome extends StatelessWidget {
+  const MobileHome({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Mobile Home")),
+      body: Center(child: Text("This is Mobile")),
+    );
+  }
+}
+
+// tablet_home.dart
+class TabletHome extends StatelessWidget {
+  const TabletHome({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Tablet Home")),
+      body: Center(child: Text("This is Tablet")),
+    );
+  }
+}
+
+// desktop_home.dart
+class DesktopHome extends StatelessWidget {
+  const DesktopHome({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Desktop Home")),
+      body: Center(child: Text("This is Desktop")),
+    );
+  }
 }

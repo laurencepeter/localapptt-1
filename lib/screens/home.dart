@@ -29,7 +29,12 @@ class HomePage extends StatelessWidget {
           children: [
             Container(
               margin: EdgeInsets.only(bottom: 20),
-              child: Image.asset('lib/assets/images/RDLG3.png'),
+              child: Image.asset(
+                'lib/assets/images/RDLG2.1.png',
+                width: 350,
+                height: 400,
+                fit: BoxFit.cover, 
+              ),
             ),
             Text(
               'SERVICES',

@@ -36,7 +36,8 @@ class InternalServices extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: Colors.black,
+        type:BottomNavigationBarType.fixed,
+        unselectedItemColor: Colors.white,
         selectedItemColor: Colors.blue,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
