@@ -1,79 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/home.dart';
+import 'package:flutter_application_1/widgets/responsive_scaffold.dart';
+
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
-  MyAppState createState() => MyAppState();
-  //MyAppState createState() => MyAppState();
+  State<MyApp> createState() => _MyAppState();
 }
 
-class MyAppState extends State<MyApp> {
-  bool _isDarkMode = false;
+class _MyAppState extends State<MyApp> {
+  ThemeMode _themeMode = ThemeMode.light;
 
-  // Toggle theme method
-  void _toggleTheme() {
+  void toggleTheme(bool isDark) {
     setState(() {
-      _isDarkMode = !_isDarkMode;  // This will toggle the theme
+      _themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Local TT',
-      themeMode: _isDarkMode ? ThemeMode.dark : ThemeMode.light,  // Change theme based on _isDarkMode
+      title: 'LocalAppTT',
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      home: HomePage(
-        isDarkMode: _isDarkMode,  // Pass the current theme state
-        onToggleTheme: _toggleTheme,  // Pass the toggle function
+      themeMode: _themeMode,
+      debugShowCheckedModeBanner: false,
+      home: ResponsiveScaffold(
+        isDarkMode: _themeMode == ThemeMode.dark,
+        onThemeToggle: toggleTheme,
+        childBuilder: (device) => HomePage(device: device),
       ),
     );
   }
-
-  
 }
-/*
-// mobile_home.dart
-class MobileHome extends StatelessWidget {
-  const MobileHome({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Mobile Home")),
-      body: Center(child: Text("This is Mobile")),
-    );
-  }
-}
-
-// tablet_home.dart
-class TabletHome extends StatelessWidget {
-  const TabletHome({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Tablet Home")),
-      body: Center(child: Text("This is Tablet")),
-    );
-  }
-}
-
-// desktop_home.dart
-class DesktopHome extends StatelessWidget {
-  const DesktopHome({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Desktop Home")),
-      body: Center(child: Text("This is Desktop")),
-    );
-  }
-}*/
